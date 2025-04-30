@@ -1,0 +1,231 @@
+.skills {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: white;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 12rem;
+}
+
+.skills.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 8rem;
+  height: 100%;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #64ffda;
+  margin-bottom: 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: #64ffda;
+}
+
+.skills-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #8892b0;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.skills-categories {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.category-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: rgba(100, 255, 218, 0.1);
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  color: #64ffda;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.category-btn:hover {
+  background: rgba(100, 255, 218, 0.2);
+  transform: translateY(-2px);
+}
+
+.category-btn.active {
+  background: #64ffda;
+  color: #1a1a2e;
+  border-color: #64ffda;
+}
+
+.category-icon {
+  font-size: 1.2rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.skill-card {
+  background: rgba(26, 26, 46, 0.8);
+  border-radius: 15px;
+  padding: 1.5rem;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(100, 255, 218, 0.1);
+  border-color: rgba(100, 255, 218, 0.3);
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.skill-header h3 {
+  color: #64ffda;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.skill-level {
+  color: #8892b0;
+  font-size: 0.9rem;
+}
+
+.skill-progress {
+  height: 8px;
+  background: rgba(100, 255, 218, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #64ffda, #00ff9d);
+  border-radius: 4px;
+  transition: width 1s ease;
+}
+
+@media (max-width: 768px) {
+  .skills {
+    padding: 3rem 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .skills-description {
+    font-size: 1rem;
+  }
+
+  .skills-categories {
+    gap: 0.5rem;
+  }
+
+  .category-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skills-icons-marquee {
+    overflow: hidden;
+    width: 100%;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-top: 1px solid rgba(100, 255, 218, 0.1);
+    z-index: 1;
+}
+  
+.icon-track-wrapper {
+    display: flex;
+    width: max-content;
+    animation: scrollIcons 40s linear infinite;
+    padding: 1rem 0;
+}
+  
+.icon-track-wrapper > .skill-icon {
+    font-size: 2rem;
+    color: #64ffda;
+    opacity: 0.8;
+    margin: 0 1.5rem;
+    white-space: nowrap;
+    transition: transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.skill-icon:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+  
+@keyframes scrollIcons {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+}
+  
+@media (max-width: 768px) {
+  .icon-track-wrapper {
+    gap: 1.5rem;
+    animation-duration: 30s;
+  }
+
+  .skill-icon {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .icon-track-wrapper {
+    gap: 1rem;
+    animation-duration: 40s;
+  }
+
+  .skill-icon {
+    font-size: 1.2rem;
+  }
+}  

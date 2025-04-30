@@ -1,0 +1,136 @@
+.footer {
+  background: #0a192f;
+  color: #8892b0;
+  padding: 4rem 2rem 2rem;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.footer.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-brand {
+  flex: 1;
+  min-width: 250px;
+}
+
+.brand-link {
+  display: flex;
+  color: #64ffda;
+  font-size: 1.5rem;
+  margin-left: -4.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #64ffda;
+  margin-left: -1.5rem;
+  transform: translateY(3px);
+}
+
+.brand-link img {
+  width: 70px;
+  height: 40px;
+  margin-left: 3rem;
+}
+
+.brand-link :hover {
+  cursor: pointer;
+}
+
+.brand-description {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #8892b0;
+}
+
+.footer-text {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  color: #64ffda;
+}
+
+/* Back to top button styles */
+.footer-text .back-to-top {
+  position: fixed; /* Make it fixed on the screen */
+  bottom: 2rem; /* Distance from the bottom of the screen */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for exact center alignment */
+  border-radius: 30%;
+  padding: 0.5rem;
+  border: 5px solid rgba(10, 228, 177, 0.932);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  animation: float 3s ease-in-out infinite;
+}
+
+.footer-text .back-to-top:hover {
+  color: #8892b0;
+  transform: translateY(-5px) scale(1.1);
+  background: rgba(100, 255, 218, 0.1);
+  box-shadow: 0 6px 8px rgba(100, 255, 218, 0.2);
+  border-color: rgba(100, 255, 218, 0.3);
+}
+
+/* Mobile View adjustments */
+@media (max-width: 768px) {
+  /* Footer styles for mobile */
+  .footer {
+    padding: 3rem 1rem 1.5rem; /* Adjust padding */
+  }
+
+  .footer-main {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footer-brand {
+    text-align: center; /* Center brand text */
+  }
+
+  .footer-text {
+    display: flex;
+    justify-content: center; /* Center content */
+    flex-direction: column;
+    gap: 1rem;
+    color: #64ffda;
+  }
+
+  /* Adjust "Back to Top" button for mobile */
+  .back-to-top {
+    margin-left: 50; /* Remove any left margin */
+    margin-right: 0; /* Remove any right margin */
+    margin-bottom: -20;
+  }
+}
+

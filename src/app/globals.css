@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -24,3 +28,161 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* === Floating Hire Me Button Container === */
+.hire-me-container {
+  position: fixed;
+  bottom: 10rem;
+  right: 12rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* === Hire Me Text === */
+.hire-me-text {
+  font-size: 1.8rem;
+  color: #64ffda;
+  font-weight: 500;
+  text-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
+  transform: rotate(-5deg);
+  animation: wave 2s ease-in-out infinite;
+}
+
+/* === Pointing Emoji === */
+.pointing-hand {
+  font-size: 1.5rem;
+  animation: point 1.5s ease-in-out infinite;
+}
+
+/* === Button Styling === */
+.floating-upwork-button {
+  position: fixed;
+  bottom: 8rem;
+  right: 5rem;
+  width: 100px;
+  height: 100px;
+  background: black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #14A800;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  animation: float 1s ease-in-out infinite;
+}
+
+.floating-upwork-button:hover {
+  transform: translateY(-5px) scale(1.1);
+  background: rgba(100, 255, 218, 0.1);
+  box-shadow: 0 6px 8px rgba(100, 255, 218, 0.2);
+  border-color: rgba(100, 255, 218, 0.3);
+}
+
+/* === SVG Icon Sizing === */
+.floating-upwork-button .upwork-icon {
+  width: 50px;
+  height: 50px;
+}
+
+/* === Animations === */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes point {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Responsive Media Queries === */
+@media (max-width: 768px) {
+  .hire-me-container {
+    bottom: 10rem;
+    right: 6rem;
+    font-size: 1.2rem;
+  }
+
+  .hire-me-text {
+    font-size: 1.2rem;
+  }
+
+  .pointing-hand {
+    font-size: 1.2rem;
+  }
+
+  .floating-upwork-button {
+    bottom: 6.5rem;
+    right: 1.5rem;
+    width: 60px;
+    height: 60px;
+  }
+
+  .floating-upwork-button .upwork-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hire-me-container {
+    bottom: 11rem;
+    right: 1rem;
+    font-size: 1rem;
+  }
+
+  .hire-me-text {
+    font-size: 1rem;
+  }
+
+  .pointing-hand {
+    display: none;
+  }
+
+  .floating-upwork-button {
+    bottom: 7rem;
+    right: 0.75rem;
+    width: 50px;
+    height: 50px;
+  }
+
+  .floating-upwork-button .upwork-icon {
+    width: 25px;
+    height: 25px;
+  }
+}
+
