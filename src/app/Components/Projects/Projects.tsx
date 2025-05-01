@@ -71,6 +71,20 @@ const Projects = () => {
         "Contact form"
       ],
       githubLink: "https://github.com/sopho1/Personal-Website"
+    },
+    {
+      title: "AI-Powered Chatbot",
+      description: "A chatbot application that uses AI to provide instant responses to user queries.",
+      shortDescription: "Built with React.js and Hugging Face API",
+      image: "./images/Chatbot.png",
+      technologies: ["React.js", "Hugging Face API"],
+      features: [
+        "Natural language processing for understanding user queries",
+        "Real-time chat interface",
+        "Integration with Hugging Face API for AI responses",
+        "User-friendly design"
+      ],
+      githubLink: "https://github.com/sopho1/AI-Chatbot"
     }
   ];
 
