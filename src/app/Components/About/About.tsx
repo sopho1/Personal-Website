@@ -15,7 +15,7 @@ const About = () => {
   const education = [
     {
       img: './images/aaulogo.png',
-      degree: 'Bachelor of Science in Computer Science',
+      degree: 'Bachelor of Science Degree in Computer Science',
       institution: 'Addis Ababa University',
       year: '2021 - 2024',
       description: 'Graduated with Great Distinction, specializing in Web Development with a strong focus on Frontend Engineering, modern JavaScript frameworks, and user-centric design principles.',
@@ -23,7 +23,7 @@ const About = () => {
     },
     {
       img: './images/aaulogo.png',
-      degree: 'Master of Business Administration',
+      degree: 'Master of Business Administration (MBA)',
       institution: 'Addis Ababa University',
       year: '2024 - 2027',
       description: 'Focused on modern business management and leadership integrated with modern technology.',
