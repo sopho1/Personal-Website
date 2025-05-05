@@ -127,8 +127,9 @@
   }
 
   /* Adjust "Back to Top" button for mobile */
-  .back-to-top {
-    margin-left: 50; /* Remove any left margin */
+  .footer-text .back-to-top {
+    font-size: 0.8rem;
+    margin-left: 100; /* Remove any left margin */
     margin-right: 0; /* Remove any right margin */
     margin-bottom: -20;
   }

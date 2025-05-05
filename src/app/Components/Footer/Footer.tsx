@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import './Footer.css';
 
 const Footer = () => {
@@ -24,7 +23,7 @@ const Footer = () => {
                             Creating digital experiences that matter
                         </p>
                         <p className="brand-description">
-                            © {new Date().getFullYear()} Sophonias. All rights reserved.
+                            © {new Date().getFullYear()}. All rights reserved.
                         </p>
                     </div>
                     <div className="footer-text">
