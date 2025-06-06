@@ -13,7 +13,50 @@ const Projects = () => {
   }, []);
 
   const projects = [
+     {
+      title: "E-Commerce Website",
+      description: "A responsive website for selling prototype planes of various sizes and types. Built with HTML, CSS, and JavaScript, featuring Stripe Checkout integration and a smooth user experience.",
+      shortDescription: "Built with React.js and Stripe Checkout",
+      image: "./images/ec.png", 
+      technologies: ["React.js", "Material UI", "Framer-Motion", "Stripe Checkout"],
+      features: [
+          "Clean, modern, and Responsive design",
+          "Interactive animations",
+          "Fast Performance",
+          "Conversion ready layout"
+      ],
+
+      githubLink: "https://github.com/sopho1/E-Commerce-Website"
+    },
     {
+      title: "Portfolio Website",
+      description: "Personal portfolio website",
+      shortDescription: "Built with Next.js and Modern CSS",
+      image: "./images/pw.png",
+      technologies: ["Next.js", "CSS", "Framer Motion", "EmailJS"],
+      features: [
+        "Responsive design",
+        "Interactive animations",
+        "Project showcase",
+        "Contact form"
+      ],
+      githubLink: "https://github.com/sopho1/Personal-Website"
+    },
+    {
+      title: "AI-Powered Chatbot",
+      description: "A chatbot application that uses AI to provide instant responses to user queries.",
+      shortDescription: "Built with React.js and Hugging Face API",
+      image: "./images/Chatbot.png",
+      technologies: ["React.js", "Hugging Face API"],
+      features: [
+        "Natural language processing for understanding user queries",
+        "Real-time chat interface",
+        "Integration with Hugging Face API for AI responses",
+        "User-friendly design"
+      ],
+      githubLink: "https://github.com/sopho1/AI-Chatbot"
+    },
+     {
       title: "Money Transfer Platform",
       description: "A full-stack application enabling users to securely transfer money between each other, with admin and user roles.",
       shortDescription: "Built with HTML, Node.js, and PostgreSQL",
@@ -47,7 +90,7 @@ const Projects = () => {
       title: "Authentication System",
       description: "A secure and user-friendly authentication system that allows users to sign up, log in, and manage their sessions using Firebase Authentication.",
       shortDescription: "Built with React.js and Firebase",
-      image: "./images/auth.png", // Replace with an appropriate image for your auth project
+      image: "./images/auth.png", 
       technologies: ["React.js", "Firebase Authentication", "Tailwind CSS"],
       features: [
           "User registration and login functionality",
@@ -57,34 +100,6 @@ const Projects = () => {
       ],
 
       githubLink: "https://github.com/sopho1/Authenticator-App-using-Firebase"
-    },
-    {
-      title: "Portfolio Website",
-      description: "Personal portfolio website",
-      shortDescription: "Built with Next.js and Modern CSS",
-      image: "./images/cover.png",
-      technologies: ["Next.js", "CSS", "Framer Motion", "EmailJS"],
-      features: [
-        "Responsive design",
-        "Interactive animations",
-        "Project showcase",
-        "Contact form"
-      ],
-      githubLink: "https://github.com/sopho1/Personal-Website"
-    },
-    {
-      title: "AI-Powered Chatbot",
-      description: "A chatbot application that uses AI to provide instant responses to user queries.",
-      shortDescription: "Built with React.js and Hugging Face API",
-      image: "./images/Chatbot.png",
-      technologies: ["React.js", "Hugging Face API"],
-      features: [
-        "Natural language processing for understanding user queries",
-        "Real-time chat interface",
-        "Integration with Hugging Face API for AI responses",
-        "User-friendly design"
-      ],
-      githubLink: "https://github.com/sopho1/AI-Chatbot"
     }
   ];
 
