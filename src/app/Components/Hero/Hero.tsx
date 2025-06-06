@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import './Hero.css'; 
+import { button } from 'framer-motion/client';
 
 const Hero = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -183,12 +184,7 @@ const Hero = () => {
                         }}
                     />
                 </div>
-                {/* <div className="floating-shapes">
-                    <div className="shape shape-1"></div>
-                    <div className="shape shape-2"></div>
-                    <div className="shape shape-3"></div>
-                </div> */}
-
+                <div className="robot">
                 <svg
                 viewBox="0 0 200 200"
                 width="500"
@@ -238,6 +234,7 @@ const Hero = () => {
                     <circle cx="100" cy="17" r="5" fill="#ff6b6b" />
                 </g>
                 </svg>
+                </div>
 
             </div>
 
