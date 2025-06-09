@@ -7,6 +7,7 @@ import Projects from "./Components/Projects/Projects";
 import Skills from "./Components/Skills/Skills";
 import Contact from "./Components/Contact/Contact";
 import { Toaster } from "react-hot-toast";
+
 export default function Home() {
   return (
    <>

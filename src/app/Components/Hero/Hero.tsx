@@ -8,13 +8,6 @@ import './Hero.css';
 const Hero = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [currentSlide, setCurrentSlide] = useState(0);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        // Simulate loading (replace with real data/image loading if needed)
-        const timer = setTimeout(() => setLoading(false), 1200);
-        return () => clearTimeout(timer);
-    }, []);
 
     const slides = [
         {
@@ -144,21 +137,6 @@ const Hero = () => {
             angle: 240
         }
     ];
-
-    if (loading) {
-        return (
-            <div className="loader-screen">
-                <div className="loader-spinner"></div>
-                <div className="loader-text">
-                    <span>Loading</span>
-                    <span className="dot">.</span>
-                    <span className="dot">.</span>
-                    <span className="dot">.</span>
-                </div>
-            </div>
-        );
-    }
-
 
     return (
         <>
