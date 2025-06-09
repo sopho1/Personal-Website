@@ -836,3 +836,62 @@
     transform: rotate(360deg);
   }
 } 
+
+/* Add to Hero.css */
+.loader-screen {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: #0a192f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeIn 0.4s ease-in-out;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.loader-spinner {
+    border: 6px solid rgba(100, 255, 218, 0.2);
+    border-top: 6px solid #64ffda;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 24px;
+    box-shadow: 0 0 12px rgba(100, 255, 218, 0.4);
+}
+
+.loader-text {
+    color: #ccd6f6;
+    font-size: 1.1rem;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    letter-spacing: 1px;
+}
+
+.loader-text span.dot {
+    animation: blink 1.4s infinite;
+    opacity: 0;
+}
+
+.loader-text span.dot:nth-child(1) { animation-delay: 0.2s; }
+.loader-text span.dot:nth-child(2) { animation-delay: 0.4s; }
+.loader-text span.dot:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
+
+@keyframes blink {
+    0%, 20% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
