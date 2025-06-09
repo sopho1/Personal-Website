@@ -1,18 +1,14 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Loader from "./Loader/Loader";
 
 export default function ClientWrapper({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1000); // Adjust delay
-    return () => clearTimeout(timer);
-  }, []);
-
+  // When Loader finishes phases, it calls onFinish to turn off loading
   if (loading) {
-    return <Loader />;
+    return <Loader onFinish={() => setLoading(false)} />;
   }
 
   return (

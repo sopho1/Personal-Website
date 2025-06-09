@@ -14,7 +14,7 @@ const Projects = () => {
 
   const projects = [
      {
-      title: "E-Commerce Website",
+      title: "E-Commerce Website Landing Page",
       description: "A responsive website for selling prototype planes of various sizes and types. Built with HTML, CSS, and JavaScript, featuring Stripe Checkout integration and a smooth user experience.",
       shortDescription: "Built with React.js and Stripe Checkout",
       image: "./images/ec.png", 
@@ -29,7 +29,7 @@ const Projects = () => {
       githubLink: "https://github.com/sopho1/E-Commerce-Website"
     },
     {
-      title: "Portfolio Website",
+      title: "Portfolio Portfolio Website",
       description: "Personal portfolio website",
       shortDescription: "Built with Next.js and Modern CSS",
       image: "./images/pw.png",

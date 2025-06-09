@@ -61,6 +61,20 @@ const About = () => {
 
   const experience = [
     {
+      img: './images/Upwork-Logo.png',
+      position: 'Frontend Developer | HTML | CSS | React | Next.js | Responsive Design | Landing Page',
+      company: 'Upwork',
+      period: 'April 2025 - Present',
+      description: 'Frontend developer with a strong focus on building responsive, user-centric websites.',
+      achievements: [
+        'Converted Figma designs into fully responsive web pages',
+        'Built reusable React components for consistent UI development',
+        'Implemented mobile-friendly layouts using modern CSS techniques',
+        'Delivered clean, maintainable code with attention to detail'
+      ],
+      icon: <FaCode />
+    },
+    {
       img: './images/CBE-LOGO.png',
       position: 'System Development and Customization | Frontend Developer | React.js',
       company: 'Commercial Bank of Ethiopia',
