@@ -1,24 +1,13 @@
 'use client';
 
-import React, { JSX } from 'react';
-import { useState, useEffect } from 'react';
-import { FaCode, FaServer, FaDatabase, FaTools, FaMobile } from 'react-icons/fa';
+import React, { useState, useEffect, JSX } from 'react';
+import { 
+  FaCode, FaServer, FaDatabase, FaTools, FaMobile, 
+  FaReact, FaJsSquare, FaHtml5, FaCss3Alt, FaNodeJs, FaPython, FaJava, FaGitAlt, FaDocker, FaAws, FaMobileAlt 
+} from 'react-icons/fa';
 import {
-    FaReact,
-    FaJsSquare,
-    FaHtml5,
-    FaCss3Alt,
-    FaNodeJs,
-    FaPython,
-    FaJava,
-    FaGitAlt,
-    FaDocker,
-    FaAws,
-    FaMobileAlt
-  } from 'react-icons/fa';
-  import { SiTypescript, SiNextdotjs, SiTailwindcss, SiMongodb, SiPostgresql, SiMysql, SiRedis, SiGraphql, SiJest, SiFlutter, SiApple, SiAndroid, SiCypress } from 'react-icons/si';
-  
-import './Skills.css';
+  SiTypescript, SiNextdotjs, SiTailwindcss, SiMongodb, SiPostgresql, SiMysql, SiRedis, SiGraphql, SiJest, SiFlutter, SiApple, SiAndroid, SiCypress
+} from 'react-icons/si';
 
 interface Skill {
   name: string;
@@ -35,6 +24,7 @@ interface SkillsData {
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [activeCategory, setActiveCategory] = useState<keyof SkillsData>('frontend');
 
   useEffect(() => {
     setIsVisible(true);
@@ -75,7 +65,7 @@ const Skills = () => {
   };
 
   const skillIconMap: { [key: string]: JSX.Element } = {
-    'React': <FaReact />,
+    'React.Js': <FaReact />,
     'Next.js': <SiNextdotjs />,
     'TypeScript': <SiTypescript />,
     'JavaScript': <FaJsSquare />,
@@ -84,86 +74,75 @@ const Skills = () => {
     'Tailwind CSS': <SiTailwindcss />,
     'Node.js': <FaNodeJs />,
     'Express': <FaJsSquare />,
-    'Python': <FaPython />,
-    'Java': <FaJava />,
-    'RESTful APIs': <FaTools />,
-    'GraphQL': <SiGraphql />,
+    'ASP DotNet': <FaTools />, // No exact icon, fallback
     'MongoDB': <SiMongodb />,
     'PostgreSQL': <SiPostgresql />,
     'MySQL': <SiMysql />,
-    'Redis': <SiRedis />,
+    'Firebase': <FaTools />, // No exact icon, fallback
     'Git': <FaGitAlt />,
     'Docker': <FaDocker />,
-    'AWS': <FaAws />,
-    'CI/CD': <FaTools />,
     'Jest': <SiJest />,
     'VS Code': <FaCode />,
     'React Native': <FaMobileAlt />,
     'Flutter': <SiFlutter />,
-    'iOS Development': <SiApple />,
-    'Android Development': <SiAndroid />,
   };
-  
 
-  const [activeCategory, setActiveCategory] = useState<keyof SkillsData>('frontend');
+  const categories = [
+    { key: 'frontend', label: 'Frontend', icon: <FaCode /> },
+    { key: 'backend', label: 'Backend', icon: <FaServer /> },
+    { key: 'database', label: 'Database', icon: <FaDatabase /> },
+    { key: 'tools', label: 'Tools', icon: <FaTools /> },
+    { key: 'mobile', label: 'Mobile', icon: <FaMobile /> },
+  ] as const;
 
   return (
-    <section className={`skills ${isVisible ? 'visible' : ''}`} id='skills'>
-      <div className="skills-container">
-        <h2 className="section-title">My Skills</h2>
-        <p className="skills-description">
+    <section
+      id="skills"
+      className={`bg-gradient-to-br from-[#1a1a2e] to-[#16213e] text-white min-h-screen pb-48 relative transition-all duration-800 ease-in-out
+        ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+    >
+      <div className="max-w-[1200px] mx-auto px-6 pt-20 pb-32">
+        <h2 className="text-4xl text-[#64ffda] text-center mb-4 relative after:absolute after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 after:w-12 after:h-[3px] after:bg-[#64ffda]">
+          My Skills
+        </h2>
+        <p className="text-center text-[#8892b0] max-w-xl mx-auto mb-12 text-lg leading-relaxed">
           Here's a comprehensive overview of my technical skills and expertise.
         </p>
 
-        <div className="skills-categories">
-          <button
-            className={`category-btn ${activeCategory === 'frontend' ? 'active' : ''}`}
-            onClick={() => setActiveCategory('frontend')}
-          >
-            <FaCode className="category-icon" />
-            Frontend
-          </button>
-          <button
-            className={`category-btn ${activeCategory === 'backend' ? 'active' : ''}`}
-            onClick={() => setActiveCategory('backend')}
-          >
-            <FaServer className="category-icon" />
-            Backend
-          </button>
-          <button
-            className={`category-btn ${activeCategory === 'database' ? 'active' : ''}`}
-            onClick={() => setActiveCategory('database')}
-          >
-            <FaDatabase className="category-icon" />
-            Database
-          </button>
-          <button
-            className={`category-btn ${activeCategory === 'tools' ? 'active' : ''}`}
-            onClick={() => setActiveCategory('tools')}
-          >
-            <FaTools className="category-icon" />
-            Tools
-          </button>
-          <button
-            className={`category-btn ${activeCategory === 'mobile' ? 'active' : ''}`}
-            onClick={() => setActiveCategory('mobile')}
-          >
-            <FaMobile className="category-icon" />
-            Mobile
-          </button>
+        {/* Categories */}
+        <div className="flex justify-center flex-wrap gap-4 mb-12">
+          {categories.map(({ key, label, icon }) => (
+            <button
+              key={key}
+              onClick={() => setActiveCategory(key)}
+              className={`flex items-center gap-2 px-6 py-3 rounded-full text-[#64ffda] border border-[#64ffda33]
+                transition-transform duration-300
+                ${activeCategory === key
+                  ? 'bg-[#64ffda] text-black border-[#64ffda]'
+                  : 'hover:bg-[#64ffda33] hover:-translate-y-1'}
+              `}
+            >
+              <span className="text-xl">{icon}</span>
+              <span className="font-medium">{label}</span>
+            </button>
+          ))}
         </div>
 
-        <div className="skills-grid">
-          {skills[activeCategory].map((skill, index) => (
-            <div key={index} className="skill-card">
-              <div className="skill-header">
-                <h3>{skill.name}</h3>
-                <span className="skill-level">{skill.level}%</span>
+        {/* Skills Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {skills[activeCategory].map(({ name, level }, i) => (
+            <div
+              key={i}
+              className="bg-[#1a1a2ecc] border border-[#64ffda1a] rounded-xl p-6 transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(100,255,218,0.1)] hover:border-[#64ffda4d]"
+            >
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-[#64ffda] text-lg font-semibold">{name}</h3>
+                <span className="text-[#8892b0] text-sm">{level}%</span>
               </div>
-              <div className="skill-progress">
-                <div 
-                  className="progress-bar"
-                  style={{ width: `${skill.level}%` }}
+              <div className="w-full h-2 bg-[#64ffda1a] rounded overflow-hidden">
+                <div
+                  className="h-full bg-gradient-to-r from-[#64ffda] to-[#00ff9d] rounded transition-all duration-1000 ease-in-out"
+                  style={{ width: `${level}%` }}
                 />
               </div>
             </div>
@@ -171,14 +150,32 @@ const Skills = () => {
         </div>
       </div>
 
-      <div className="skills-icons-marquee">
-        <div className="icon-track-wrapper">
-          {[...Object.values(skills).flat(), ...Object.values(skills).flat()].map((skill, index) => (
-            <span key={index} className="skill-icon" title={skill.name}>
-              {skillIconMap[skill.name] || <FaTools />}
+      {/* Icons Marquee */}
+      <div className="w-full overflow-hidden border-t border-[#64ffda1a] bg-gradient-to-br from-[#1a1a2e] to-[#16213e] mt-20">
+        <div className="flex w-max animate-[marquee_20s_linear_infinite] gap-12 py-4">
+          {[...Object.values(skills).flat(), ...Object.values(skills).flat()].map(({ name }, idx) => (
+            <span
+              key={idx}
+              title={name}
+             className="text-3xl md:text-4xl cursor-default select-none transition-transform duration-300 hover:scale-125 flex items-center justify-center filter grayscale hover:grayscale-0 hover:text-[#64ffda]"
+
+            >
+              {skillIconMap[name] || <FaTools />}
             </span>
           ))}
         </div>
+
+        {/* Inline Keyframes (inside style tag) */}
+        <style jsx>{`
+          @keyframes marquee {
+            0% {
+              transform: translateX(0%);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+        `}</style>
       </div>
 
     </section>
