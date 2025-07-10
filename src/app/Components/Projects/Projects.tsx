@@ -29,7 +29,7 @@ const Projects = () => {
       githubLink: "https://github.com/sopho1/E-Commerce-Website"
     },
     {
-      title: "Portfolio Portfolio Website",
+      title: "Personal Portfolio Website",
       description: "Personal portfolio website",
       shortDescription: "Built with Next.js and Modern CSS",
       image: "./images/pw.png",

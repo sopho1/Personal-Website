@@ -70,7 +70,7 @@
   word-break: break-word;
 
   /* Responsive font size */
-  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-size: clamp(2rem, 8vw, 6rem);
   line-height: 1.2;
   max-width: 90vw;
 }
