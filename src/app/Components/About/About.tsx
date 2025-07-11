@@ -77,7 +77,7 @@ const About = () => {
     {
       img: './images/CBE-LOGO.png',
       position: 'System Development and Customization | Frontend Developer | React.js',
-      company: 'Commercial Bank of Ethiopia',
+      company: 'Commercial Bank of Ethiopia, HEAD OFFICE',
       period: 'November 2024 - Present',
       description: 'Worked on various web projects, focusing on frontend development.',
       achievements: [
